@@ -1,0 +1,55 @@
+.coin-animation-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.coin {
+    position: absolute;
+    border-radius: 50%;
+    animation: coinFall 3s ease-out;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+@keyframes coinFall {
+    0% {
+        transform: translateY(-200px) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.coin.small {
+    width: 15px;
+    height: 15px;
+}
+
+.coin.medium {
+    width: 25px;
+    height: 25px;
+}
+
+.coin.large {
+    width: 35px;
+    height: 35px;
+}
+
+.coin.gold { background-color: gold; }
+.coin.silver { background-color: silver; }
+.coin.bronze { background-color: #cd7f32; }
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+}
+
+.coin {
+    animation: coinFall 3s ease-out, glow 1s infinite;
+}
